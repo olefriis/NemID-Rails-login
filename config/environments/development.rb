@@ -36,4 +36,4 @@ ENV['key_password'] = 'Test1234'
 ENV['server_url_prefix'] = 'https://syst2ext.danid.dk'
 
 # Brug udviklings-test
-org.openoces.ooapi.environment.Environments.setEnvironments(org.openoces.ooapi.environment.Environments::Environment.value_of('OCESII_DANID_ENV_EXTERNALTEST'));
+org.openoces.ooapi.environment.Environments.setEnvironments(org.openoces.ooapi.environment.Environments::Environment.value_of('OCESII_DANID_ENV_EXTERNALTEST'))

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    result = org.openoces.securitypackage.SignHandler.base64Decode(request[:result]);
+    result = org.openoces.securitypackage.SignHandler.base64Decode(request[:result])
     if result == 'ok'
       handle_ok
     elsif result == 'cancel'
@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
   
   def get_certificate_and_status
     signature, challenge, service_provider = request[:signature], session[:challenge], 'www.nemid.nu'
-    org.openoces.securitypackage.LogonHandler.validateAndExtractCertificateAndStatus(org.openoces.securitypackage.SignHandler.base64Decode(signature), challenge, service_provider);
+    org.openoces.securitypackage.LogonHandler.validateAndExtractCertificateAndStatus(org.openoces.securitypackage.SignHandler.base64Decode(signature), challenge, service_provider)
   end
   
   def is_poces(certificate_and_status)
