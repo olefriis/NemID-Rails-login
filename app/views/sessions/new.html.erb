@@ -1,0 +1,15 @@
+<%
+signer = org.openoces.ooapi.web.Signer.new(ENV['key_store_url'], ENV['key_store_password'], ENV['key_store_alias'], ENV['key_password'])
+
+generator = org.openoces.ooapi.web.OcesAppletElementGenerator.new signer
+generator.server_url_prefix = ENV['server_url_prefix']
+
+generator.challenge = session[:challenge]
+generator.log_level = 'debug' # INFO/DEBUG/ERROR
+%>
+<h1>Log ind</h1>
+<%=raw generator.generate_logon_applet_element sessions_path %>
+
+<!-- Cpr: 1501883179 -->
+<!-- Alias: TERMANN -->
+<!-- Password: test1234 -->
